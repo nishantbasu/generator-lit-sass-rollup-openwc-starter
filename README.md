@@ -1,8 +1,6 @@
 # Lit Elemnt SASS Rollup Open WC Starter Template
 
-Deployed App : https://hive-sks-c9da748e2491.herokuapp.com
-
-Code Climate Report : https://codeclimate.com/github/nishant-basu-tamu3/student_knowledge_system
+A generator for setting up a starter frontend app using Lit Element, SASS and Rollup. Uses Open WC for testing.
 
 ## Instructions
 * Install Yeoman globally: npm install -g yo
