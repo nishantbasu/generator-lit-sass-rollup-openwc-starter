@@ -1,0 +1,6 @@
+[submodule "generators/app/lit-ts-sass-rollup-openwc-starter"]
+	path = generators/app/lit-ts-sass-rollup-openwc-starter
+	url = https://github.com/nishantbasu/lit-ts-sass-rollup-openwc-starter
+[submodule "generators/app/templates"]
+	path = generators/app/templates
+	url = https://github.com/nishantbasu/lit-ts-sass-rollup-openwc-starter

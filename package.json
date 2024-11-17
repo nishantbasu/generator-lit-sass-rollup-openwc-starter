@@ -1,0 +1,19 @@
+{
+  "name": "generator-lit-sass-rollup-openwc-starter",
+  "version": "1.0.0",
+  "description": "A generator for setting up a starter frontend app using Lit Element, SASS and Rollup. Uses Open WC for testing.",
+  "main": "index.js",
+  "type": "module",
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "author": "Nishant Basu",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nishantbasu/generator-lit-sass-rollup-openwc-starter.git"
+  },
+  "dependencies": {
+    "yeoman-generator": "^7.3.3"
+  }
+}
