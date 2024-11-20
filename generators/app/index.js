@@ -15,6 +15,17 @@ export default class extends Generator {
         this.answers = await this.prompt([
             {
                 type: 'input',
+                name: 'componentName',
+                message: 'Enter your main component name (e.g., my-component):',
+                validate: input => {
+                    const words = input.split('-');
+                    return words.length >= 2 && words.every(word => word.length > 0) 
+                        ? true 
+                        : 'Component name should have at least two words separated by a hyphen.';
+                }
+            },
+            {
+                type: 'input',
                 name: 'install',
                 message: 'Would you like to install dependencies? (y/n)',
                 default: 'y',
@@ -53,11 +64,8 @@ export default class extends Generator {
             'web-test-runner.config.mjs',
             'web-dev-server.config.mjs',
             'rollup.config.mjs',
-            'README.template.md',
-            'README.md',
             'postcss.config.mjs',
             'package.json',
-            'package-lock.json',
             'eslint.config.mjs',
             '.prettierrc',
             '.gitignore',
@@ -73,6 +81,16 @@ export default class extends Generator {
                 this.fs.copy(this.templatePath(file), this.destinationPath(file));
             }
         });
+
+        ['rollup.config.mjs', 'package.json'].forEach(file => {
+            const filePath = this.destinationPath(file);
+            this.fs.write(filePath, 
+                this.fs.read(filePath).replace(/lit-ts-sass-rollup-openwc-starter/g, this.answers.componentName)
+            );
+        });
+
+        this.fs.write(this.destinationPath('README.template.md'), '## Web Component Documentation\n');
+
         this.log('Files copied successfully.');
     }
 
