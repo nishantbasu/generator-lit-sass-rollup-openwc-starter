@@ -67,7 +67,11 @@ export default class extends Generator {
         ];
 
         filesToCopy.forEach(file => {
-            this.fs.copy(this.templatePath(file), this.destinationPath(file));
+            if (file === '.gitignore') {
+                this.fs.copy(this.templatePath('_gitignore'), this.destinationPath('.gitignore'));
+            } else {
+                this.fs.copy(this.templatePath(file), this.destinationPath(file));
+            }
         });
         this.log('Files copied successfully.');
     }
